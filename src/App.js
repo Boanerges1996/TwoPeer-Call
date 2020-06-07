@@ -121,10 +121,7 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    socket = SokcetIOClient(
-      "https://git.heroku.com/thawing-inlet-11062.git",
-      {}
-    );
+    socket = SokcetIOClient("https://git.heroku.com/thawing-inlet-11062.git");
     socket.on("connectedUsers", (users) => {
       console.log(users);
       this.setState({ users: [...users] });
