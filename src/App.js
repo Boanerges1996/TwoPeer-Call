@@ -160,7 +160,7 @@ export class App extends Component {
         <Grid container>
           <Grid xs={false} sm={3} item></Grid>
           <Grid xs={12} sm={6} item style={{ marginBottom: "50px" }}>
-            <Grid container direction="">
+            <Grid container>
               <Grid item xs={6} style={{ textAlign: "right" }}>
                 <Inp
                   value={this.state.name}
@@ -241,7 +241,7 @@ export class App extends Component {
               if (data === this.state.name) return null;
               else {
                 return (
-                  <div style={{ float: "left" }}>
+                  <div style={{ float: "left" }} key={index}>
                     <Button
                       onClick={() => this.callOtherUser(data)}
                       key={index}
