@@ -72,6 +72,7 @@ export class App extends Component {
       });
       console.log("No");
     } else {
+      this.setState({ isloadingCam: true });
       console.log("ok");
       try {
         let stream = await navigator.mediaDevices.getUserMedia({
@@ -79,10 +80,11 @@ export class App extends Component {
           audio: true,
         });
         this.myRef.current.srcObject = stream;
-        this.setState({ stream });
+        this.setState({ stream, isloadingCam: false });
         console.log(socket);
         socket.emit("connecti", this.state.name);
       } catch (err) {
+        toast.error("You have to allow the audio and video");
         console.log(err);
       }
     }
