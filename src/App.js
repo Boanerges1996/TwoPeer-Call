@@ -2,10 +2,9 @@ import "./App.css";
 import Peer from "simple-peer";
 import SokcetIOClient from "socket.io-client";
 import { toast } from "react-toastify";
-import { Button, Icon, Input } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 import "react-toastify/dist/ReactToastify.css";
-import { AppBar, Input as Inp, Grid } from "@material-ui/core";
-// const Peer = require("simple-peer");
+import { Input as Inp, Grid } from "@material-ui/core";
 
 import React, { Component } from "react";
 
@@ -249,7 +248,8 @@ export class App extends Component {
                       labelPosition="right"
                     >
                       <Icon name="phone" />
-                      {`Call ${data}`}
+                      {`Call`}
+                      <b>{`${data}`}</b>
                     </Button>
                   </div>
                 );
